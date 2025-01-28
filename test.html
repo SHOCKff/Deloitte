@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deloitte Office</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+        }
+        .contact-info {
+            background-color: #e9ecef;
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+        .contact-details {
+            max-height: 200px; /* Adjust based on how much content you want visible before scrolling */
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            background-color: #f8f9fa;
+        }
+        .map {
+            height: 400px;
+            width: 100%;
+            margin: 1rem 0;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .map-link {
+            display: block;
+            width: 100%;
+            height: 400px;
+            background-color: #e9ecef;
+            color: #007bff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 400px;
+            font-size: 1.5rem;
+            border: 1px solid #ddd;
+        }
+        .map-link:hover {
+            background-color: #d6d8db;
+        }
+        nav {
+            background-color: #343a40;
+            padding: 1rem 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    nav {
+    background-color: #343a40;
+    padding: 1rem 0;
+    position: sticky; /* Make the navbar sticky */
+    top: 0; /* Position the navbar at the top */
+    z-index: 1000; /* Ensure it stays above other content */
+    width: 100%; /* Ensure the navbar spans the full width */
+}
+
+}
+
+    </style>
+</head>
+<body>
+    <header class="bg-dark text-white py-3">
+        <div class="container text-center">
+            <h1>Deloitte Office</h1>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Office Locator</h2>
+            <p>Find our office and contact us for more information.</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h3>Find Us on the Map</h3>
+            <a href="https://www.google.com/maps?q=16.3000,80.4500" target="_blank" class="map-link">View Location on Google Maps</a>
+        </div>
+    </section>
+       
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Deloitte Office Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the contact section and contact details container
+            var contactDetails = document.createElement('div');
+            contactDetails.id = 'contact-details';
+            contactDetails.classList.add('contact-details');
+            contactDetails.innerHTML = `
+                <p><strong>Address:</strong> Bus Station, N T R, Arrival Block Rd, Coastal Andhra Region, Thamma Ranga Reddy Nagar, Guntur, Andhra Pradesh 522001</p>
+                <p><strong>Phone:</strong> +855 123 456 789</p>
+                <p><strong>Email:</strong> udumulamahendrareddy@gmail.com</p>
+            `;
+    
+            // Append the contact details to the contact-info container
+            var contactInfoSection = document.querySelector('.contact-info .container');
+            contactInfoSection.appendChild(contactDetails);
+    
+            // Create "Contact Us" link dynamically
+            var nav = document.querySelector('nav ul');
+            var contactUsLink = document.createElement('li');
+            contactUsLink.innerHTML = '<a href="#" id="contact-us">Contact Us</a>';
+            nav.appendChild(contactUsLink);
+    
+            // Add event listener to toggle contact details visibility
+            document.getElementById('contact-us').addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default link behavior
+    
+                // Toggle visibility of contact details
+                contactDetails.classList.toggle('show');
+    
+                // Highlight the contact details when shown
+                if (contactDetails.classList.contains('show')) {
+                    contactDetails.style.backgroundColor = '#d6d8db'; // Highlight background
+                } else {
+                    contactDetails.style.backgroundColor = ''; // Remove highlight when hidden
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
